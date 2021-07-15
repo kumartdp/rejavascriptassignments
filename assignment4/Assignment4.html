@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+function clicklocalCounter() {
+ 
+    if (localStorage.clickcount) {
+      localStorage.clickcount = Number(localStorage.clickcount)+1;
+    } else {
+      localStorage.clickcount = 1;
+    }
+    document.getElementById("result1").innerHTML = "LocalStorage count :   " + localStorage.clickcount ;
+ }
+function clicksessionCounter() {
+ 
+    if (sessionStorage.clickcount) {
+      sessionStorage.clickcount = Number(sessionStorage.clickcount)+1;
+    } else {
+      sessionStorage.clickcount = 1;
+    }
+    document.getElementById("result2").innerHTML = "Session storage count : " + sessionStorage.clickcount ;
+
+}
+</script>
+</head>
+<body>
+
+<p><button onclick="clicklocalCounter()" type="button">Increment LocalStorage</button></p>
+<div id="result1"></div>
+<p>Click the button to see the counter increase.</p>
+<p><button onclick="clicksessionCounter()" type="button">Increment SessionStorage</button></p>
+<div id="result2"></div>
+<p>Click the button to see the counter increase.</p>
+
+</body>
+</html>
